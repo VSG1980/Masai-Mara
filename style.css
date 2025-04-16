@@ -1,0 +1,106 @@
+.heading {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: black;
+  }
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.background-image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 2.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.thumbnails-container {
+  position: fixed;
+  top: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  height: 10rem;
+  width: 80%;
+  overflow-x: scroll;
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 2cap;
+}
+
+.thumbnails-container img {
+  width: auto;
+  margin-right: 1rem;
+  border-radius: 12px;
+  box-shadow: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  opacity: 0.2; /
+}
+
+.thumbnails-container img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+.arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    z-index: 3;
+    cursor: pointer;
+    user-select: none;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .left-arrow {
+    left: 2rem;
+  }
+  
+  .right-arrow {
+    right: 2rem;
+  }
+  
+  @media (max-width: 600px) {
+    .heading {
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+    }
+  
+    .thumbnails-container {
+      height: 4.5rem;
+      padding: 0.5rem;
+    }
+  
+    .thumbnails-container img {
+      height: 4rem;
+    }
+  
+    .arrow {
+      font-size: 2rem;
+      padding: 0.5rem;
+    }
+}
